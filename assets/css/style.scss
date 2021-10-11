@@ -1,0 +1,300 @@
+
+$heading-font: "Raleway", sans-serif;
+$secondery-color:#eb5d1e;
+$main-color:#fef8f5;
+$parag-color:#5a6570;
+
+%line{
+    background-color: $secondery-color;
+    height: 2px;
+    width: 60px;
+    display: block;
+    margin:25px auto;
+}
+*{
+  
+    box-sizing: border-box;
+}
+body{
+
+    display: flex;
+    flex-direction: column;
+}
+%btn{
+    width: 150px;
+    color: #fff;
+    border-style: none;
+    background-color: $secondery-color;
+}
+
+
+#container{
+    width: 100%;
+}
+
+//start navbar
+
+.navbar{
+     background-color: $main-color;
+    box-shadow: 5px 10px 10px #e0dddd;
+   .nav{
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       .navbar-collapse{
+           justify-content: flex-end
+       }
+   }
+
+    .btn{
+        @extend %btn;
+   
+        border-radius: 25px;
+
+        
+    }
+}
+
+
+//end vavbar
+
+
+//start home
+#home{
+    padding-top: 50px;
+  background-color:   $main-color;
+  height:100vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  .home-bg{
+        width: 100%;
+        height: 80%;
+
+      
+        img{
+
+            animation: shimmy 2s infinite;
+            animation-direction: alternate;
+
+            height:700px;
+           width: 100%;
+
+        }
+    }
+
+   
+
+    .home-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      font-family: $heading-font;
+      
+           .title{
+
+           font-size: 48px;
+           font-weight: 700;
+           line-height: 56px;
+           color: #4e4039;
+           }
+       .home-text{
+
+           color: #a08f86;
+           margin: 15px 0 0 0;
+           font-size: 24px;
+       }
+
+       .btn{
+            @extend %btn;
+           margin-top: 20px;
+       }
+    }
+
+}
+
+//end home
+@keyframes shimmy {
+    0% {
+      transform: translate(0px, 0px);    
+    }
+    100% {
+      transform: translate(0px, 50px);
+    }
+  }
+
+
+  //start about us
+     
+  #about-us{
+      display: flex;
+      align-items: center;
+      height: fit-content;
+      padding: 50px 0;
+      background-color: rgb(255, 255, 255);
+      
+       .about-us-bg{
+         
+         
+           img{
+               width: 100%;
+               height: 400px;
+            }
+
+          }
+       .about-us-content{
+                    
+          .fas{
+            font-size: xx-large;
+            color: $secondery-color;
+          }
+          p{
+            color: $parag-color;
+           }
+        }
+  }
+  //end about us 
+  
+  
+  //start services
+    #services{
+         padding: 50px 0;
+        display: flex;
+        justify-content: center;
+       height:fit-content;
+        background-color: $main-color;
+        .container{
+            overflow: hidden;
+        }
+        
+            .title{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                 align-items: center;
+            }
+           
+            .line{
+                background-color: $secondery-color;
+                height: 2px;
+                width: 60px;
+                display: block;
+                margin:25px auto;
+            
+            }
+           
+            .icon-box{
+             display: flex;
+             flex-direction: column;
+             flex-wrap: wrap;
+             justify-content: center;
+              border-radius: 25px;
+              text-align: center;
+              padding: 10px;
+              box-shadow: 0 10px 29px 0  #e0dddd;
+              transition:all 0.3s ease-in-out;
+             &:hover{
+                transform: translateY(-5px);
+                border-color: #ef7f4d;
+             }
+
+             .fas{
+                 margin-bottom: 10px;
+                 text-align: center;
+                 color: $secondery-color;
+                 font-size: 50px;
+             }
+             
+            }
+    
+    }
+  //end services
+
+  //start portfolio
+   #portfolio{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    .projects{
+       
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        
+       
+        .cards{
+      
+         position: relative;
+         margin: 10px;
+         
+       
+        
+           
+            
+            img{
+                border-style: none;
+                border-radius: 30px;
+                
+               height: 300px;
+               width: 300px;
+               
+               
+            }   
+
+            .overlay{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;  
+                border-radius: 35px;
+                opacity: 0;
+                visibility: none;
+                transition: .5s ease;
+                background-color: #ecaf75;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+               
+            }
+            &:hover .overlay{
+
+                opacity: 0.5;
+            }
+           &-content{
+               width: fit-content;
+               height: fit-content;
+           }
+        
+        }
+    }
+       height: fit-content;
+       .portfolio-contents{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+        .line{
+            @extend %line;
+        }
+        .title{
+           text-align: center; 
+         }
+      }
+     #filter{
+        text-align: center;
+         a{
+             color: $parag-color;
+             justify-content: center;
+             font-weight: 700;
+             text-align: center;
+             border-style: none;
+            &:hover{
+              color: $secondery-color;
+              }
+          }
+    }
+      
+    }
+   
+  //end portfolio
